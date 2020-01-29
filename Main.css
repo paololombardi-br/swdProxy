@@ -73,10 +73,10 @@
         flex-wrap: wrap;
     }
     .printlayout_A4251 {
-        margin-left: 0.2cm;
-        margin-right: 0.2cm;
-        margin-top: 1.1cm;
-        margin-bottom: 1.0cm;
+        margin-left: 0cm;
+        margin-right: 0cm;
+        margin-top: 0cm;
+        margin-bottom: 0cm;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 21.2mm;
@@ -96,10 +96,10 @@
     }
 
     @page {
-        margin-left: 0cm;
-        margin-right: 0cm;
-        margin-top: 0cm;
-        margin-bottom: 0cm;
+        margin-left: 0.2cm;
+        margin-right: 0.2cm;
+        margin-top: 1.1cm;
+        margin-bottom: 1.0cm;
       }
 
     .face {

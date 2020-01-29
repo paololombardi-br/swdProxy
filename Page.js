@@ -8,7 +8,7 @@ myApp.controller('ProxyPageController', ['$scope', '$http', '$window', function 
         $scope.cards = JSON.parse($window.localStorage['CardsDb']);
         $scope.cardsWithDice = $scope.cards ? $scope.cards.filter(x => x.has_die) : [];
       }
-      return $http.get('http://swdestinydb.com/api/public/cards/', {}).then(
+      return $http.get('https://swdestinydb.com/api/public/cards/', {}).then(
         cards => {
           $window.localStorage['CardsDb'] = JSON.stringify(cards.data);
           $scope.cards = $window.localStorage['CardsDb'];
