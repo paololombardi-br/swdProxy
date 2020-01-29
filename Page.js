@@ -76,7 +76,6 @@ myApp.controller('ProxyPageController', ['$scope', '$http', '$window', function 
       $scope.printItems.push({ card: x, faceNum: 4 });
       $scope.printItems.push({ card: x, faceNum: 5 });
     })
-    $scope.$apply();
-    window.print();
+    setTimeout(()=>{window.print()},500);
   }
 }]);
