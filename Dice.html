@@ -1,0 +1,43 @@
+<style>
+
+</style>
+<div class="face"
+    ng-style="{'background-image':'url('+card.imagesrc+')', 'background-size': card.size+'px', 'background-position': ''+card.offsetx+'px '+card.offsety+'px'}"
+    ng-mousemove="move($event)" ng-mousedown="isClicked = true" ng-mouseup="isClicked = false">
+    <div class="face-val" layout="column" layout-align="center center">
+        <span ng-if="card.sidesMap[faceNum].quantifier!=''">{{card.sidesMap[faceNum].quantifier}}</span>
+        <span ng-if="card.sidesMap[faceNum].symbol!=''" class="icon"
+            ng-class="'icon-'+card.sidesMap[faceNum].symbol"></span>
+    </div>
+    <div class="face-cost" layout="row" layout-align="center center" ng-if="card.sidesMap[faceNum].cost!=''">
+        <span>{{card.sidesMap[faceNum].cost}}</span>
+        <span class="icon icon-resource"></span>
+    </div>
+    <div class="face-number" ng-if="faceNum==5" layout="row" layout-align="center center">
+        <span>{{card.position}}</span>
+        <span  class="icon"
+            ng-class="'icon-set-'+card.set_code"></span>
+    </div>
+    <svg class="design-area">
+        <g id="layer1" inkscape:groupmode="layer" inkscape:label="Camada 1">
+            <path
+                ng-style="{'fill':card.sidesMap[faceNum].symbol=='blank'?'#ff4000':card.sidesMap[faceNum].quantifier.indexOf('+')>=0?'#4f55b7':'#000000'}"
+                style="fill-opacity:1;stroke:#ffff07;stroke-width:4.15748083;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                d="M 496 52.033203 L 415.74805 132.28516 L 415.74805 510.23633 L 496.1582 590.64648 A 321.25984 321.25984 0 0 0 642.51953 321.25977 A 321.25984 321.25984 0 0 0 496 52.033203 z "
+                transform="scale(0.1)" id="path8376" />
+        </g>
+        <g ng-if="card.sidesMap[faceNum].cost != ''" id="layer1" inkscape:groupmode="layer" inkscape:label="Camada 1">
+            <path
+                style="fill:#ffe32e;fill-opacity:1;stroke:#ffffdd;stroke-width:0.75590552;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                d="M 26.457031 53.380859 L 18.607422 61.230469 A 32.125984 32.125984 0 0 0 32.126953 64.251953 A 32.125984 32.125984 0 0 0 45.642578 61.228516 L 37.794922 53.380859 L 26.457031 53.380859 z "
+                id="path9032" />
+        </g>
+        <g ng-if="faceNum==5" id="layer1" inkscape:groupmode="layer" inkscape:label="Camada 1">
+            <path ng-style="{'fill':card.rarity_code=='L'?'#a870b1':card.rarity_code=='R'?'#99bb4a':'#e4e9e3'}"
+                style="stroke-width:0.37795276;fill-opacity:1;stroke:#ffffa6;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                d="M 32.126953 0 A 32.125984 32.125984 0 0 0 18.285156 3.1679688 L 24.566406 9.4492188 L 39.683594 9.4492188 L 45.958984 3.1757812 A 32.125984 32.125984 0 0 0 32.126953 0 z "
+                id="path22" />
+        </g>
+    </svg>
+
+</div>
