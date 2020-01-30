@@ -21,7 +21,7 @@ myApp.controller('ProxyPageController', ['$scope', '$http', '$window', function 
   }
   $scope.loadCardsWithDice();
   $scope.printList = [];
-  $scope.printInfo = {};
+  $scope.printInfo = {paper:"A4"};
 
   $scope.searchTextChange = (text) => {
     //console.log('Text changed to ' + text);
@@ -55,7 +55,7 @@ myApp.controller('ProxyPageController', ['$scope', '$http', '$window', function 
 
   $scope.querySearch = (query) => {
     if ($scope.cardsWithDice)
-      return $scope.cardsWithDice.filter(x => x.name.indexOf(query) !== -1);
+      return $scope.cardsWithDice.filter(x => x.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
     else
       return []
   }

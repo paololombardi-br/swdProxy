@@ -82,7 +82,17 @@
         grid-template-rows: 21.2mm;
         grid-auto-rows: 21.2mm;
     }
-    .printlayout_A4251 div:nth-child(2n+1){
+    .printlayout_A4 {
+        display: flex;
+        flex-wrap: wrap;
+        margin:6mm;
+    }
+
+    .printlayout_A4 .printface{
+        margin:1mm; 
+    }
+
+    .printlayout_A4251 .printface:nth-child(2n+1){
         margin-left:auto; 
         margin-right:1mm;
         margin-top: auto;

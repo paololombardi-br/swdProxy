@@ -20,9 +20,9 @@
 <body ng-controller="ProxyPageController">
     <div class='noprint'>
         <div>
-            <span class="icon icon-disrupt"></span>
-            <span class="icon icon-special"></span>
-            <span class="icon icon-blank"></span>
+            <md-toolbar md-scroll-shrink>
+                <div class="md-toolbar-tools">SWD Proxy Maker</div>
+            </md-toolbar>
             <md-autocomplete md-selected-item="card" md-no-cache="true"
                 md-search-text-change="searchTextChange(searchText)" md-search-text="searchText"
                 md-selected-item-change="cardSelected(item)" md-items="item in querySearch(searchText)"
@@ -48,6 +48,7 @@
                 <dice-face card="selectedCard" face-num='4'></dice-face>
                 <dice-face card="selectedCard" face-num='5'></dice-face>
             </div>
+            <p>Drag image to chose image position. Scroll mouse wheel onto image to zoom</p>
             <md-button class="md-raised md-primary" ng-click='printList.push(selectedCard)'>Add To Print List
             </md-button>
         </div>
